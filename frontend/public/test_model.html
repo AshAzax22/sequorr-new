@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="status">Testing model fetch...</div>
+    <script>
+        async function test() {
+            const status = document.getElementById('status');
+            try {
+                const response = await fetch('/models/emotion/config.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    status.innerHTML = 'Success! Model config: ' + JSON.stringify(data).substring(0, 100) + '...';
+                    status.style.color = 'green';
+                } else {
+                    status.innerHTML = 'Failed! Status: ' + response.status;
+                    status.style.color = 'red';
+                }
+            } catch (err) {
+                status.innerHTML = 'Error: ' + err.message;
+                status.style.color = 'red';
+            }
+        }
+        test();
+    </script>
+</body>
+</html>

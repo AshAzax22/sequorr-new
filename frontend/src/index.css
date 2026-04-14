@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+
+  /* Brand Colors */
+  --primary-green: #2EEE34;
+  --primary-green-rgb: 46, 238, 52;
+  --dark-green: #0D9C12;
+  --card-bg: #030803;
+
+  /* Glassmorphism & Borders */
+  --border-subtle: rgba(var(--primary-green-rgb), 0.2);
+  --border-active: rgba(var(--primary-green-rgb), 0.4);
+  --glass-bg: rgba(var(--primary-green-rgb), 0.1);
+  --glass-blur: blur(4px);
+
+  /* Transitions */
+  --transition-smooth: all 0.3s ease;
+
+  /* color-scheme: light dark; */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: black;
+  color: white;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+/* Scroll Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.revealVisible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.headerFadeOut {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}

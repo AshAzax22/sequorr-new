@@ -1,0 +1,52 @@
+.btnPrimary {
+    padding: 10px 16px;
+    border-radius: 100px;
+    font-size: clamp(13px, 2vw, 16px);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: none;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(26, 187, 4, 0.626);
+    background: radial-gradient(50% 50% at 50% 50%, #3bef41 0%, #67f96c 100%);
+    box-shadow: 0 0 24px 0 rgba(46, 238, 52, 0.60);
+    letter-spacing: -1px;
+    pointer-events: auto;
+}
+
+.btnPrimary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.5;
+    pointer-events: none;
+    animation: popping 1s infinite;
+}
+
+@keyframes popping {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(10);
+        opacity: 0;
+    }
+}
+
+.btnPrimary:hover {
+    transform: translateY(-2px);
+}
+
+.btnPrimary:active {
+    transform: translateY(2px);
+}

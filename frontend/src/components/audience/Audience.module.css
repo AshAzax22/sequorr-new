@@ -1,0 +1,158 @@
+.audienceSection {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    margin: 0 auto;
+}
+
+.personasGrid {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+}
+
+.glowEffect {
+    position: absolute;
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 2 / 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    background: linear-gradient(0deg,
+            rgba(0, 0, 0, 1) 0%,
+            var(--dark-green) 50%,
+            rgba(var(--primary-green-rgb), 0.2) 100%);
+    border-radius: 500px 500px 0 0;
+    filter: blur(60px);
+    opacity: 0.5;
+}
+
+.personaCard {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 12px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgb(46, 46, 46);
+    cursor: pointer;
+    filter: grayscale(1);
+}
+
+/* Card Overlay for Readability */
+.personaCard::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(0, 0, 0, 0.9) 100%);
+    z-index: 1;
+    transition: opacity 0.4s ease;
+}
+
+.cardIcon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.cardTitle {
+    font-size: clamp(18px, 2.5vw, 20px);
+    font-weight: 400;
+    color: #FFFFFF;
+    z-index: 2;
+    margin: 0;
+}
+
+.cardDescription {
+    font-size: clamp(13px, 1.8vw, 15px);
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    /* Added to ensure clean reveal */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+}
+
+/* Hover States */
+.personaCard:hover {
+    border-color: var(--primary-green);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 15px rgba(var(--primary-green-rgb), 0.1);
+    filter: grayscale(0);
+}
+
+.personaCard:hover::before {
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.3) 40%,
+            rgba(0, 0, 0, 0.85) 100%);
+}
+
+.personaCard:hover .cardDescription {
+    max-height: 120px;
+    opacity: 1;
+    margin-top: 4px;
+}
+
+.personaCard:hover .cardIcon {
+    transform: scale(1.1) translateY(-2px);
+    filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .personasGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .personaCard {
+        height: 380px;
+    }
+}
+
+@media (max-width: 640px) {
+    .personasGrid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+    .personaCard {
+        height: 350px;
+    }
+
+    .headerText {
+        font-size: 16px;
+    }
+}

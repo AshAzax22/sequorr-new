@@ -1,0 +1,123 @@
+.outer-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.step-circle-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border-radius: 12px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.step-indicator-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+
+.step-content-default {
+  position: relative;
+  overflow: hidden;
+  padding: 0.2rem 0;
+}
+
+.step-default {
+  padding: 0;
+}
+
+.footer-container {
+  padding: 0;
+}
+
+.footer-nav {
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.footer-nav.spread {
+  justify-content: space-between;
+}
+
+.footer-nav.end {
+  justify-content: flex-end;
+}
+
+.back-button {
+  transition: all 350ms;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 0;
+  font-weight: 500;
+}
+
+.back-button:hover {
+  color: #FFFFFF;
+}
+
+.back-button.inactive {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.next-button {
+  transition: all 350ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: #2EEE34;
+  border: 2px solid #97FF9B;
+  color: #0C500F;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 4px 24px;
+  cursor: pointer;
+}
+
+.next-button:hover {
+  background-color: #26c42a;
+}
+
+.step-indicator {
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+.step-indicator-inner {
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-weight: 800;
+  font-size: 0.875rem;
+}
+
+.step-connector {
+  position: relative;
+  height: 0.25rem;
+  flex: 1;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+.step-connector-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}

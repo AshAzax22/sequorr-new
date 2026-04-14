@@ -1,0 +1,126 @@
+.pageContainer {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+.content {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: #a0a0a0;
+    margin-bottom: 2rem;
+}
+
+.scannerWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.videoContainer {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.videoStream {
+    display: block;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+.canvasOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.loadingText {
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    animation: pulse 1.5s infinite;
+}
+
+.emotionPanel {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.dominantText {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-top: 0.5rem;
+}
+
+.sidePanelWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 300px;
+}
+
+.statsPanel {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    padding: 2rem;
+    border-radius: 16px;
+}
+
+.statsPanel h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 0.5rem;
+}
+
+.statRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.statLabel {
+    color: #888;
+    font-size: 0.95rem;
+}
+
+.statValue {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}

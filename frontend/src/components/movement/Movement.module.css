@@ -1,0 +1,218 @@
+.movementSection {
+    box-sizing: border-box;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 0 24px;
+    aspect-ratio: 20/9;
+    margin:auto;
+
+}
+
+.movementShowcase {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 550px;
+    border-radius: 24px;
+    border: 4px solid rgba(var(--primary-green-rgb), 0.30);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 40px;
+    overflow: hidden;
+    will-change: transform, border-color, box-shadow;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+
+    background-image: url('../../assets/movement/bg2.svg'), url('../../assets/movement/bg3.svg');
+    background-size: 400px, 1500px;
+    background-position: center bottom, center 20%;
+    background-repeat: no-repeat;
+}
+
+/* .movementShowcase:hover {
+    border-color: rgba(var(--primary-green-rgb), 0.60);
+    box-shadow: 0 0 30px rgba(var(--primary-green-rgb), 0.1);
+}
+
+.movementShowcase:hover .communityTag {
+    opacity: 1;
+} */
+
+.movementShowcase::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: radial-gradient(97.32% 97.29% at 50.55% 99.48%, rgba(26, 136, 30, 0.50) 0%, rgba(42, 217, 48, 0.10) 47.12%, rgba(46, 238, 52, 0.00) 100%);
+    background-image: url('../../assets/movement/bg1.svg');
+    background-size: 2400px;
+    background-position: 70% 40%;
+    background-repeat: no-repeat;
+
+    opacity: 0.5;
+    z-index: -1;
+    filter: blur(15px);
+    transform: translateZ(0);
+}
+
+.missionHeading {
+    font-size: clamp(14px, 4vw, 18px);
+    line-height: 1.2;
+    color: white;
+    width: 90%;
+    font-weight: 300;
+}
+
+.communityTag {
+    position: absolute;
+    font-size: clamp(12px, 4vw, 16px);
+    color: white;
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    gap: 10px;
+    background-color: rgba(0, 255, 47, 0.292);
+    border: 1px solid rgba(var(--primary-green-rgb), 0.3);
+    padding: 10px 20px;
+    border-radius: 100px;
+    white-space: nowrap;
+    width: fit-content;
+    transition: var(--transition-smooth);
+}
+
+.communityTag img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* 1st Tag - Top Left */
+.communityTag:nth-of-type(2) {
+    top: 25%;
+    left: 20%;
+    bottom: auto;
+    right: auto;
+}
+
+/* 2nd Tag - Mid Right */
+.communityTag:nth-of-type(3) {
+    top: 50%;
+    right: 10%;
+    bottom: auto;
+    left: auto;
+}
+
+/* 3rd Tag - Bottom Left */
+.communityTag:nth-of-type(4) {
+    bottom: 15%;
+    left: 10%;
+    top: auto;
+    right: auto;
+}
+
+/* 4th Tag - Top Right */
+.communityTag:nth-of-type(5) {
+    top: 25%;
+    right: 20%;
+    bottom: auto;
+    left: auto;
+}
+
+/* 5th Tag - Mid Left */
+.communityTag:nth-of-type(6) {
+    bottom: 40%;
+    left: 5%;
+    top: auto;
+    right: auto;
+}
+
+/* 6th Tag - Bottom Right */
+.communityTag:nth-of-type(7) {
+    bottom: 15%;
+    right: 10%;
+    top: auto;
+    left: auto;
+}
+
+
+/* Base Button Styles */
+.movementButton {
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-size: clamp(13px, 2vw, 16px);
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: var(--transition-smooth);
+    border: none;
+    color: #FFFFFF;
+}
+
+.movementButton {
+    border: 2px solid rgba(255, 255, 255, 0.20);
+    background: radial-gradient(50% 50% at 50% 50%, #86bb8d 0%, var(--dark-green) 100%);
+    box-shadow: 0 0 24px 0 rgba(var(--primary-green-rgb), 0.60);
+}
+
+.movementButton:hover {
+    background: radial-gradient(circle at 50% 50%, var(--primary-green), var(--primary-green));
+    transform: translateY(-2px);
+}
+
+/* Responsiveness */
+@media screen and (max-width: 1024px) {
+    .communityTag:nth-of-type(2) {
+        left: 10%;
+    }
+
+    .communityTag:nth-of-type(5) {
+        right: 10%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .movementSection {
+        margin: 40px auto;
+        gap: 24px;
+        width: 80%;
+        padding:0;
+    }
+
+    .movementShowcase {
+        height: auto;
+        min-height: 400px;
+        padding: 60px 24px 40px;
+        background-size: 300px, 1000px;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .communityTag {
+        display: none;
+    }
+
+    .missionHeading {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .movementShowcase {
+        padding: 40px 20px;
+        min-height: 350px;
+    }
+
+    .missionHeading {
+        font-size: 14px;
+    }
+}

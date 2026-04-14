@@ -1,0 +1,341 @@
+.motivationSection {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin: 80px 0;
+    padding: 0 24px;
+}
+
+.motivationShowcase {
+    position: relative;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 270px;
+    gap: 12px;
+    max-width: 1400px;
+}
+
+.motivationCard {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #00BA06;
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+}
+
+.motivationCard h2,
+.motivationCard p {
+    margin: 0;
+}
+
+.motivationCard:nth-child(1) .cardTitle,
+.motivationCard:nth-child(3) .cardTitle,
+.motivationCard:nth-child(6) .cardTitle,
+.motivationCard:nth-child(8) .cardTitle {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.motivationCard:nth-child(1) .cardTagline,
+.motivationCard:nth-child(8) .cardTagline {
+    font-size: 16px;
+}
+
+.motivationCard:nth-child(1) .cardDescription {
+    font-size: 16px;
+    color: #11550F;
+}
+
+.motivationCard .cardHighlightText {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #0C500F;
+    font-size: 12px;
+    font-weight: 200;
+    color: white;
+}
+
+
+.motivationCard:nth-child(2),
+.motivationCard:nth-child(4),
+.motivationCard:nth-child(5),
+.motivationCard:nth-child(7) {
+    background-color: #373737;
+}
+
+.motivationCard:nth-child(2) .cardTitle,
+.motivationCard:nth-child(4) .cardTitle,
+.motivationCard:nth-child(5) .cardTitle,
+.motivationCard:nth-child(7) .cardTitle {
+    font-size: 20px;
+    color: #2EEE34;
+    font-weight: 800;
+}
+
+.motivationCard:nth-child(2) .cardTagline,
+.motivationCard:nth-child(4) .cardTagline,
+.motivationCard:nth-child(5) .cardTagline,
+.motivationCard:nth-child(7) .cardTagline {
+    font-size: 16px;
+}
+
+.motivationCard:nth-child(2) .cardBarContainer {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 8px;
+    bottom: 0;
+    left: 0;
+    padding: 0 12px;
+}
+
+.motivationCard:nth-child(2) .cardBarContainer .cardBar {
+    position: relative;
+    width: 100%;
+    height: 0;
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(0deg, #0A710D 0%, #2EEE34 100%);
+    bottom: 0;
+    transition: height 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.motivationCard:hover .cardBarContainer .cardBar:nth-child(1) {
+    height: 50%;
+}
+
+.motivationCard:hover .cardBarContainer .cardBar:nth-child(2) {
+    height: 80%;
+}
+
+.motivationCard:hover .cardBarContainer .cardBar:nth-child(3) {
+    height: 60%;
+}
+
+.motivationCard:hover .cardBarContainer .cardBar:nth-child(4) {
+    height: 80%;
+}
+
+.motivationCard:hover .cardBarContainer .cardBar:nth-child(5) {
+    height: 100%;
+}
+
+
+.motivationCard:nth-child(2) .cardHighlightText,
+.motivationCard:nth-child(4) .cardHighlightText,
+.motivationCard:nth-child(5) .cardHighlightText {
+    background-color: #494949;
+}
+
+.motivationCard:nth-child(3) {
+    justify-content: space-around;
+}
+
+.motivationCard:nth-child(3) .daySchedule {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.motivationCard:nth-child(3) .dayPhaseNav {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    background-color: #109C16;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+.motivationCard:nth-child(3) .dayPhaseNavItem {
+    position: relative;
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    color: #0C500F;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    line-height: 2;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.motivationCard:nth-child(3) .dayPhaseNavItem:hover {
+    color: #00ff0d;
+}
+
+.motivationCard:nth-child(3) .dayPhaseNavItem::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
+}
+
+.motivationCard:nth-child(3) .dayPhaseNavItem.active {
+    color: white;
+}
+
+.motivationCard:nth-child(3) .dayPhaseNavItem.active::after {
+    width: 100%;
+}
+
+.dayPhaseNavDescriptionContainer {
+    min-height: 80px;
+}
+
+.dayPhaseNavDescription {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.motivationCard:nth-child(4) .cardDescription {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.motivationCard:nth-child(6) {
+    background-image: url('../../assets/motivation/wave.svg'), url('../../assets/motivation/logo.svg');
+    background-position: 0% 0%, center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain, auto;
+}
+
+.motivationCard:nth-child(6) .cardTitle {
+    font-size: 24px;
+    width: 60%;
+    text-align: end;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.motivationCard:nth-child(7) {
+    background-image: url('../../assets/motivation/star.svg');
+    background-position: center bottom -100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.motivationCard:nth-child(8) {
+    background: radial-gradient(circle at 70% 30%, #2EEE34 0%, #00BA06 100%);
+    overflow: hidden;
+}
+
+.motivationCard:nth-child(8) .activityLoopContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+}
+
+.motivationCard:nth-child(8) .activityTextContainer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    min-width: 120px;
+}
+
+.motivationCard:nth-child(8) .activityText {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    animation: slideInActivity 0.3s ease-out;
+}
+
+.motivationCard:nth-child(8) .activityButton {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.motivationCard:nth-child(8) .activityButton:hover {
+    transform: scale(1.15);
+}
+
+.motivationCard:nth-child(8) .activityButton:active {
+    transform: rotate(180deg) scale(1.15);
+}
+
+@keyframes slideInActivity {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 1200px) {
+    .motivationShowcase {
+        grid-template-columns: repeat(2, 1fr);
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .motivationShowcase {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        width: 100%;
+    }
+
+    .motivationCard {
+        min-height: 250px;
+    }
+}

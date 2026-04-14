@@ -1,0 +1,753 @@
+/* Page Layout */
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.featuresHeroSection {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
+
+
+/* Base Button Styles */
+.btnSecondary {
+    /* padding: 12px 24px; */
+    padding: 10px 16px;
+    border-radius: 100px;
+    font-size: clamp(13px, 2vw, 16px);
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: var(--transition-smooth);
+    border: none;
+    color: #FFFFFF;
+}
+
+.btnSecondary {
+    background-color: rgba(0, 0, 0, 0.4);
+    letter-spacing: -1px;
+}
+
+
+
+.btnSecondary:hover {
+    /* background-color: white; */
+    color: #4EFF54;
+    transform: translateY(-2px);
+}
+
+.btnSecondary:active {
+    transform: translateY(2px);
+}
+
+/* Responsive Optimization for Hero Section */
+@media (max-width: 1024px) {}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 480px) {
+    .btnSecondary {
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+    }
+}
+
+/* About Section Styles */
+.aboutSection {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 24px;
+}
+
+.aboutBentoGrid {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 560px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 12px;
+}
+
+/* Shared styles for all bento items */
+.bentoItem {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    gap: 10px;
+    transition: var(--transition-smooth);
+    z-index: 1;
+    opacity: 0.6;
+}
+
+.bentoItem:hover {
+    border-color: var(--border-active);
+    transform: translateY(-4px);
+    opacity: 1;
+    box-shadow: 0 10px 30px -10px rgba(var(--primary-green-rgb), 0.15);
+}
+
+/* Grid Placement & Backgrounds */
+.aboutBentoItemOne {
+    grid-column: 1 / 2;
+    grid-row: 1 / 5;
+    background-image: url('../../assets/homeAbout/bentoOne1.svg');
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.aboutBentoItemTwo {
+    grid-column: 1 / 2;
+    grid-row: 5 / 9;
+    background-image: url('../../assets/homeAbout/bentoTwo1.svg');
+    background-size: 160%;
+    background-position: 20% 50%;
+    background-repeat: no-repeat;
+}
+
+.aboutBentoItemThree {
+    grid-column: 2 / 3;
+    grid-row: 1 / 7;
+    background-image: url('../../assets/homeAbout/bentoThree1.svg'), url('../../assets/homeAbout/bentoThree2.svg');
+    background-size: 70%, 250%;
+    background-position: -50% -50%, 50% 10%;
+    background-repeat: no-repeat, no-repeat;
+}
+
+.aboutBentoItemFour {
+    grid-column: 2 / 3;
+    grid-row: 7 / 9;
+    background-image: url('../../assets/homeAbout/bentoFour1.svg');
+    background-size: cover;
+    background-position: 50% 28%;
+    background-repeat: no-repeat;
+    align-items: center;
+}
+
+.aboutBentoItemFive {
+    grid-column: 3 / 4;
+    grid-row: 1 / 4;
+    background-image: url('../../assets/homeAbout/bentoFive1.svg');
+    background-size: 80%;
+    background-position: 200% 70%;
+    background-repeat: no-repeat;
+}
+
+.aboutBentoItemSix {
+    grid-column: 3 / 4;
+    grid-row: 4 / 9;
+    background-image: url('../../assets/homeAbout/bentoSix1.svg');
+    background-size: 150%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.aboutBentoTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.aboutBentoDescription {
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 1.3;
+}
+
+/* Buttons in Bento */
+.aboutBentoButton {
+    padding: 10px 16px;
+    border-radius: 100px;
+    font-size: clamp(13px, 2vw, 16px);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: 2px solid rgba(26, 187, 4, 0.626);
+    background: radial-gradient(50% 50% at 50% 50%, #3bef41 0%, #67f96c 100%);
+    box-shadow: 0 0 24px 0 rgba(46, 238, 52, 0.60);
+    color: #FFFFFF;
+    letter-spacing: -1px;
+    pointer-events: auto;
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutBentoButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 30px rgba(46, 238, 52, 0.80);
+}
+
+.aboutBentoButton:active {
+    transform: translateY(2px);
+}
+
+
+/* Responsive Optimization */
+
+@media (max-width: 1210px) {
+    .aboutBentoGrid {
+        max-width: 940px;
+        height: 480px;
+    }
+
+    .bentoItem {
+        border-radius: 8px;
+        gap: 6px;
+        padding: 12px;
+    }
+
+    .aboutBentoItemOne {
+        background-size: 70%;
+    }
+
+    .aboutBentoItemTwo {
+        background-size: 170%;
+        background-position: 15% 60%;
+    }
+
+    .aboutBentoItemThree {
+        background-size: 90%, 250%;
+        background-position: -180% -190%, 50% 10%;
+    }
+
+    .aboutBentoItemFour {
+        background-size: 110%;
+        background-position: 50% 30%;
+    }
+
+    .aboutBentoItemFive {
+        background-size: 90%;
+        background-position: 320% 70%;
+    }
+
+    .aboutBentoItemSix {
+        background-size: 150%;
+        background-position: 50% 50%;
+    }
+
+    .aboutBentoTitle {
+        font-size: 18px;
+    }
+
+    .aboutBentoDescription {
+        font-size: 13px;
+    }
+
+    .aboutBentoButton {
+        padding: 10px 20px;
+    }
+
+    .aboutBentoButtonText {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .aboutBentoGrid {
+        max-width: 700px;
+        height: 750px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+
+    /* Grid Shift for Tablet */
+    .aboutBentoItemOne {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        background-size: 90%;
+    }
+
+    .aboutBentoItemThree {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        background-size: 70%, 180%;
+        background-position: -60% -60px, 50% 10%;
+    }
+
+    .aboutBentoItemTwo {
+        grid-column: 1 / 2;
+        grid-row: 3 / 5;
+    }
+
+    .aboutBentoItemFour {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        background-size: 110%;
+        background-position: 50% 23%;
+    }
+
+    .aboutBentoItemFive {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+        background-size: 70%;
+        background-position: 160% 70%;
+    }
+
+    .aboutBentoItemSix {
+        grid-column: 2 / 3;
+        grid-row: 4 / 6;
+        background-size: 150%;
+        background-position: 50% 50%;
+    }
+
+    .aboutBentoDescription {
+        font-size: 12px;
+    }
+
+    .aboutBentoButtonText {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .aboutBentoGrid {
+        max-width: 540px;
+        height: 600px;
+    }
+
+    .aboutBentoItemFour {
+        background-size: 120%;
+        background-position: 50% 26%;
+    }
+
+    .aboutBentoButton {
+        padding: 8px 16px;
+    }
+
+    .aboutBentoButtonText {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 560px) {
+    .aboutBentoGrid {
+        max-width: 300px;
+        height: 1400px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(10, 1fr);
+    }
+
+    /* Single Column Stack */
+    .aboutBentoItemOne {
+        grid-column: 1;
+        grid-row: 1 / 3;
+    }
+
+    .aboutBentoItemThree {
+        grid-column: 1;
+        grid-row: 3 / 5;
+    }
+
+    .aboutBentoItemTwo {
+        grid-column: 1;
+        grid-row: 5 / 7;
+    }
+
+    .aboutBentoItemFour {
+        grid-column: 1;
+        grid-row: 7 / 8;
+        background-size: 120%;
+        background-position: 50% 23%;
+    }
+
+    .aboutBentoItemFive {
+        grid-column: 1;
+        grid-row: 8 / 9;
+    }
+
+    .aboutBentoItemSix {
+        grid-column: 1;
+        grid-row: 9 / 11;
+    }
+}
+
+/* About Fitness Section Styles */
+.aboutFitnessSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(40px, 8vw, 80px);
+    padding: 24px;
+}
+
+.aboutFitnessHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.fitnessContent {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.fitnessBlock {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(30px, 5vw, 60px);
+    align-items: center;
+    width: 100%;
+}
+
+/* Zigzag effect on desktop */
+@media (min-width: 1025px) {
+    .fitnessBlock:nth-child(even) .fitnessTextContent {
+        order: 2;
+    }
+
+    .fitnessBlock:nth-child(even) .fitnessMediaContent {
+        order: 1;
+    }
+}
+
+.fitnessTextContent {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.fitnessBlockTitle {
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.fitnessBlockText {
+    font-size: clamp(14px, 1.2vw, 16px);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.fitnessMediaContent {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    display: flex;
+    overflow: hidden;
+    border: none;
+}
+
+.fitnessImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* Responsiveness for Fitness Section */
+@media (max-width: 1024px) {
+    .aboutFitnessSection {
+        gap: 60px;
+        padding: 80px 24px;
+    }
+
+    .fitnessBlock {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .aboutFitnessSection {
+        gap: 50px;
+        padding: 60px 20px;
+    }
+
+    .fitnessBlock {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        text-align: center;
+    }
+
+    /* Force Media on Top and remove zigzag on mobile */
+    .fitnessBlock .fitnessMediaContent {
+        order: 1 !important;
+        height: 250px;
+    }
+
+    .fitnessBlock .fitnessTextContent {
+        order: 2 !important;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .fitnessBlockTitle {
+        font-size: 28px;
+    }
+
+    .fitnessBlockText br {
+        display: none;
+    }
+
+    /* Adjust absolute positioned images for smaller containers */
+    .fitnessBlock1 .fitnessMediaContent,
+    .fitnessBlock2 .fitnessMediaContent {
+        height: 300px;
+        width: 100%;
+    }
+
+    .fitnessBlock1 .fitnessImage {
+        width: 100%;
+        transform: translate(-50%, -30%);
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutFitnessSection {
+        padding: 40px 16px;
+        gap: 40px;
+    }
+
+    /* Adjust absolute positioned images for smaller containers */
+    .fitnessBlock1 .fitnessMediaContent,
+    .fitnessBlock2 .fitnessMediaContent {
+        height: 150px;
+    }
+
+    .fitnessBlockTitle {
+        font-size: 24px;
+    }
+
+    .fitnessBlockText {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+}
+
+/* Why Sequorr Section Styles */
+.whySequorrSection {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+
+
+.whySequorrContent {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin-top: 40px;
+}
+
+.whySequorrBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 6px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--glass-bg);
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid rgba(var(--primary-green-rgb), 0.2);
+    transition: var(--transition-smooth);
+    position: relative;
+    /* For pseudo-element positioning */
+    overflow: hidden;
+    /* Hide rotated corners */
+    z-index: 1;
+    min-height: 450px;
+}
+
+.whySequorrBlock::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transition: var(--transition-smooth);
+}
+
+.whySequorrBlock:hover {
+    cursor: pointer;
+    border: 1px solid rgba(var(--primary-green-rgb), 0.8);
+    transform: translateY(-2px);
+}
+
+.whySequorrBlockTitle {
+    font-size: clamp(16px, 4vw, 18px);
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.whySequorrBlockText {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.whySequorrBlock:nth-child(1)::before {
+    background-image: url('../../assets/homeAbout/bentoTwo1.svg');
+    transform: rotate(90deg);
+    background-size: 450px;
+    background-position: center;
+    top: -20%;
+}
+
+.whySequorrBlock:nth-child(2)::before {
+    background-image: url('../../assets/homeAbout/bentoFive1.svg');
+    background-size: 450px;
+    background-position: center;
+    top: -20%;
+}
+
+.whySequorrBlock:nth-child(3):before {
+    background-image: url('../../assets/homeAbout/bentoSix1.svg');
+    background-size: 250px;
+    background-position: center;
+    top: -20%;
+}
+
+/* Responsiveness for Why Sequorr Section */
+@media (max-width: 1024px) {
+    .whySequorrSection {
+        padding: 80px 24px;
+    }
+
+    .whySequorrContent {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .whySequorrBlock {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .whySequorrSection {
+        padding: 60px 20px;
+    }
+
+    .whySequorrHeader {
+        gap: 16px;
+    }
+
+    .whySequorrBlock {
+        padding: 20px;
+    }
+
+    .whySequorrBlockTitle {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .whySequorrSection {
+        padding: 40px 16px;
+    }
+
+    .whySequorrContent {
+        margin-top: 30px;
+    }
+
+    .whySequorrBlockTitle {
+        font-size: 16px;
+    }
+
+    .whySequorrBlockText {
+        font-size: 14px;
+    }
+}
+
+/* Features Animation Styles Ported to Home */
+.featuresAnimationContainer {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.featuresAnimation {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(50% 50% at 50% 50%, #2EEE34 0%, #ACFFAE 100%);
+    box-shadow: 0 0 375px 0 rgba(46, 238, 52, 0.50), 0 0 36px 0 #2EEE34;
+    position: relative;
+}
+
+.featuresAnimation::before {
+    content: '';
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #000000;
+    opacity: 0.8;
+}
+
+.cssTextRing {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotate 25s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+}
+
+.cssTextRing span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(calc(360deg / var(--total) * var(--index))) translateY(-110px);
+    color: #5cff89;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: lowercase;
+    opacity: 0.95;
+    letter-spacing: normal;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

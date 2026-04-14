@@ -1,0 +1,224 @@
+.footerContainer {
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(46, 238, 52, 0.05) 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 0;
+}
+
+.footerContainer::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1601 / 495;
+    /* Matches the SVG dimensions */
+    background-image: url('../../assets/footer/logo.svg');
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    transform: translateY(50%);
+    opacity: 0.25;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Ensure content stays above the background logo */
+.marqueeSection,
+.ctaSection,
+.footerBottom {
+    position: relative;
+    z-index: 1;
+}
+
+/* Marquee Section */
+.marqueeSection {
+    width: 100%;
+    background: var(--primary-green);
+    padding: 2px 0;
+    /* Taller bar */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.marqueeContent {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+}
+
+.marqueeContent span {
+    flex-shrink: 0;
+    margin-right: 30px;
+    /* Increased spacing */
+    font-size: clamp(16px, 4vw, 20px);
+    /* Larger text as per image */
+    font-weight: 800;
+    font-style: italic;
+    color: #0C500F;
+    text-transform: lowercase;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    /* Gap between text and // */
+}
+
+.marqueeContent i {
+    font-style: normal;
+    font-weight: 900;
+    color: #0C500F;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-100% / 3));
+        /* Only move one set length */
+    }
+}
+
+/* CTA Section */
+.ctaSection {
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.ctaTitle {
+    font-size: clamp(20px, 5vw, 36px);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -2px;
+    color: var(--primary-green);
+}
+
+.ctaText {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 10px;
+}
+
+.ctaButton {
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-size: clamp(14px, 2vw, 16px);
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: var(--transition-smooth);
+    border: none;
+    color: #FFFFFF;
+    border: 2px solid rgba(255, 255, 255, 0.20);
+    background: radial-gradient(50% 50% at 50% 50%, #86bb8d 0%, var(--dark-green) 100%);
+    box-shadow: 0 0 24px 0 rgba(var(--primary-green-rgb), 0.60);
+}
+
+.ctaButton:hover {
+    background: radial-gradient(circle at 50% 50%, var(--primary-green), var(--primary-green));
+    transform: translateY(-2px);
+}
+
+.footerBottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.copyright {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.socialLinks a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 1px solid var(--border-subtle);
+    transition: var(--transition-smooth);
+}
+
+.socialLinks a img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+}
+
+.socialLinks a:hover {
+    background: var(--primary-green);
+    transform: translateY(-3px);
+}
+
+.socialLinks a:hover img {
+    filter: invert(0);
+    opacity: 1;
+}
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .footerContainer {
+        gap: 60px;
+        padding: 40px 0 20px;
+    }
+
+    .ctaSection {
+        gap: 15px;
+    }
+
+    .footerBottom {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .legalInfo {
+        order: 2;
+    }
+
+    .socialLinks {
+        order: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .footerContainer {
+        gap: 40px;
+    }
+
+    .copyright {
+        font-size: 12px;
+        padding: 0 20px;
+    }
+
+    .socialLinks {
+        gap: 15px;
+    }
+}

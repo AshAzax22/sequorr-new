@@ -1,0 +1,149 @@
+.heroSection {
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Background should cover the whole area */
+    overflow: hidden;
+}
+
+.heroBackground {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Allow background components to receive pointer events if needed */
+    pointer-events: auto;
+}
+
+.heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    pointer-events: none;
+    position: relative;
+    width: 100%;
+    /* padding: 24px 16px; */
+    /* Moved padding here */
+    z-index: 1;
+}
+
+.heroTagline {
+    border-radius: 50px;
+    background-color: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    padding: 10px 24px;
+    text-align: center;
+    pointer-events: auto;
+}
+
+.taglineText {
+    font-size: clamp(13px, 1.5vw, 16px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--primary-green);
+}
+
+.heroText {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    width: 100%;
+}
+
+.heroTitleWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Default styling for wordmark images passed as title */
+.heroTitleWrapper img {
+    height: clamp(26px, 8vw, 44px);
+    width: auto;
+    object-fit: contain;
+}
+
+.heroTitleText {
+    font-size: clamp(32px, 8vw, 64px);
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.heroSubtitle {
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: 400;
+    color: #ffffff;
+    max-width: 800px;
+    font-style: italic;
+    /* Common across pages */
+}
+
+.heroDescription {
+    font-size: clamp(14px, 2vw, 18px);
+    color: #cfcfcf;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.heroButtonGroup {
+    display: flex;
+    gap: 24px;
+    pointer-events: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Responsive Optimization */
+@media (max-width: 1024px) {
+    .heroText {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroContent {
+        gap: 16px;
+    }
+
+    .heroDescription {
+        max-width: 90%;
+        line-height: 1.3;
+    }
+
+    .heroButtonGroup {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroSection {
+        padding: 0;
+    }
+
+    .heroContent {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .heroTagline {
+        padding: 8px 16px;
+    }
+
+    .heroButtonGroup {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 300px;
+    }
+}
